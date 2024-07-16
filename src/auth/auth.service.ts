@@ -35,7 +35,7 @@ export class AuthService {
     try {
       const admin = await this.usersService.findOne({ email: 'admin' });
       if (admin) {
-        console.log('🚀 ~ Admin User Already Exists');
+        console.log('🔥 ~ Admin User Already Exists');
       }
     } catch (error) {
       const hashedPassword = await this.hashPassword('admin123');
@@ -47,7 +47,7 @@ export class AuthService {
       AdminUser.phone_number = '0000000000';
       AdminUser.role = UserRole_Enum.ADMIN;
       await this.usersRepository.save(AdminUser);
-      console.log('🚀 ~ Admin User Created');
+      console.log('🔥 ~ Admin User Created');
     }
   }
 
