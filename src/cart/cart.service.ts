@@ -53,7 +53,7 @@ export class CartService {
   }
 
   async delete(userId: string, productId?: string, removeAllFlag?: boolean) {
-    let cartProduct = await this.findOne(userId, productId);
+    const cartProduct = await this.findOne(userId, productId);
 
     if (removeAllFlag || cartProduct.count === 1) {
       // If there's only one item left, remove the entire record
